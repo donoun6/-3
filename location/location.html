@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1. minimum-scale=1 user-scalable=no">
+    <title>xwood</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+  </head>
+  <body class="subpage">
+    <div id="wrap">
+      <header id="header">
+        <!-- 로고 -->
+        <h1 id="top-logo">
+          <a href="../index.html"><div class="logo-img"></div></a>
+        </h1>
+        <!-- 메인 메뉴 -->
+        <nav id="top-nav">
+          <ul>
+            <li>
+              <a href="../company/introduce.html">회사소개</a>
+              <ul class="sub-menu">
+                <li><a href="../company/introduce.html">빙그레 소개</a></li>
+                <li><a href="../company/ci.html">히스토리</a></li>
+                <li><a href="../company/history.html">투자정보</a></li>
+              </ul>
+            </li>
+            <li><a href="../product/product.html">제품소개</a></li>
+            <li>
+              <a href="../community/notice.html">고객센터</a>
+              <ul class="sub-menu">
+                <li><a href="../community/notice.html">고객상담센터</a></li>
+                <li><a href="../community/faq.html">공지사항</a></li>
+              </ul>
+            </li>
+            <li><a href="../location/location.html">윤리경영</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <!-- 왼쪽 메뉴 -->
+          <aside id="lnb">
+            <ul>
+              <li><a href="./location.html">윤리경영</a></li>
+            </ul>
+          </aside>
+          <!-- 컨텐츠 본문 영역 -->
+          <div class="content">
+            <h2 class="sub-title"><span>윤리경영</span></h2>
+              <div class="inner">
+                <div id="map" style="width: 1000px; height: 350px; margin: 50px auto;"></div>
+              </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+        <!-- footer 상단 영역 -->
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="column footer-logo">
+                <!-- footer logo 영역 -->
+              </div>
+              <div class="column">
+                <!-- site map 영역 -->
+                <h4>site map</h4>
+                <ul>
+                  <li><a href="../company/introduce.html">회사소개</a></li>
+                  <li><a href="../product/product.html">제품소개</a></li>
+                  <li><a href="../community/notice.html">고객센터</a></li>
+                  <li><a href="./location.html">윤리경영</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <!-- contact us 영역 -->
+                <h4>contact us</h4>
+                <p>
+                  A108 Adam street<br>
+                  New York, NY535022<br>
+                  United states<br>
+                  <strong>Phone :</strong><a href="tel:+82-10-0000-0000">+82-010-0000-0000</a><br>
+                  <strong>Email :</strong><a href="mailto:aaa@naver.com">aaa@naver.com</a></p>
+              </div>
+              <div class="column news">
+                <!-- news 영역 -->
+                <h4>news</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <form>
+                  <input type="text" name="search"><input type="submit" value="search">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer 하단 영역 -->
+        <div class="container">
+          <div class="copyright">
+            &copy;Copyright<strong> My Page</strong> All Right Reserved
+          </div>
+          <div class="credits">
+            Designed By <a href="mailto:aaa@naver.com">MySelf</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=43bfd768b211ac04cc81d57641847436"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+      mapOption = {
+        center: new kakao.maps.LatLng(35.8660426, 128.5938422), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+      };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    // 마커가 표시될 위치입니다
+    var markerPosition = new kakao.maps.LatLng(35.8660426, 128.5938422);
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);
+
+    // 인포윈도우로 장소에 대한 설명을 표시합니다
+    var infowindow = new kakao.maps.InfoWindow({
+      content: '<div class="map-info-window">코리아IT학원</div>'
+    });
+    infowindow.open(map, marker);
+  </script>
+</html>
